@@ -1,19 +1,19 @@
 from enum import Enum, auto
 
 class M(Enum): 
-    BICEPS = auto()
-    TRICEPS = auto()
-    DELTS = auto()
-    CHEST = auto()
-    ABS = auto()
-    LATS = auto()
-    TRAPS = auto()
-    LOWER_BACK = auto()
-    CALVES = auto()
-    HAMSTRINGS = auto()
-    QUADS = auto()
-    GLUTES = auto()
-    FOREARMS = auto()
+    BICEPS = "biceps"
+    TRICEPS = "triceps"
+    DELTS = "delts"
+    CHEST = "chest"
+    ABS = "abs"
+    LATS = "lats"
+    TRAPS = "traps"
+    LOWER_BACK = "lower back"
+    CALVES = "calves"
+    HAMSTRINGS = "hamstrings"
+    QUADS = "quads"
+    GLUTES = "glutes"
+    FOREARMS = "forearms"
 
 class ExerciseCalculator(object):
 
@@ -57,7 +57,7 @@ class ExerciseCalculator(object):
         dips = {M.TRICEPS: 3, M.DELTS: 2, "chest": 2, M.FOREARMS: 1, M.LATS: 1}
         hanging_leg_raises = {"abs": 3, M.QUADS: 2, M.FOREARMS: 2}
         deadlifts = {M.GLUTES: 3, M.LOWER_BACK: 3, M.TRAPS: 2, M.QUADS: 2, M.CALVES: 2, 
-        M.FOREARMS: 2, M.HAMSTRINGS: 1, "abs": 1}
+        M.FOREARMS: 2, M.HAMSTRINGS: 1, "abs": 1, M.LATS: 1}
         shrugs = {M.FOREARMS: 3, M.TRAPS: 3}
         farmers_carries = {M.FOREARMS: 3, M.TRAPS: 2}
         rack_pulls = {M.FOREARMS: 3, M.TRAPS: 2, M.GLUTES: 1, M.LOWER_BACK: 1, M.QUADS: 1}
@@ -65,7 +65,7 @@ class ExerciseCalculator(object):
         tricep_pullovers = {M.TRICEPS: 3}
         leg_curls = {M.HAMSTRINGS: 3}
         leg_extensions = {M.QUADS: 3}
-        face_pulls = {M.DELTS: 3, M.TRAPS: 1, M.BICEPS: 1}
+        face_pulls = {M.DELTS: 3, M.TRAPS: 1, M.BICEPS: 1, M.LATS: 1}
         lat_raises = {M.DELTS: 3}
         leg_press = {M.GLUTES: 3, M.QUADS: 3, M.HAMSTRINGS: 2, M.CALVES: 1}
         self.exercise_info = {
@@ -137,7 +137,7 @@ class ExerciseCalculator(object):
             if self.totals_per[key] < amount:
                 amount = self.totals_per[key]
                 least = key
-        return least + " " + amount
+        return least.value + " " + str(amount)
 
     def most_trained_muscle(self): 
         most = ""
@@ -146,7 +146,7 @@ class ExerciseCalculator(object):
             if self.totals_per[key] > amount:
                 amount = self.totals_per[key]
                 most = key
-        return most + " " + amount
+        return most.value + " " + str(amount)
 
     def get_most_trained_by_volume(self): 
         most = ""
@@ -155,7 +155,7 @@ class ExerciseCalculator(object):
             if self.total_volumes_per[key] > amount:
                 amount = self.total_volumes_per[key]
                 most = key
-        return most + " " + amount
+        return most.value + " " + str(amount)
 
     def get_least_trained_by_volume(self): 
         least = ""
@@ -164,7 +164,7 @@ class ExerciseCalculator(object):
             if self.totals_per[key] < amount:
                 amount = self.totals_per[key]
                 least = key
-        return least + " " + amount
+        return least.value + " " + str(amount)
 
     def get_sets_by_muscle_group(self, group): 
         if group in self.muscle_groups:

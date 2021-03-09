@@ -9,6 +9,7 @@ One Exercise Test
     Expect summary    13 0 0
     Exercise    curls: 4 sets
     Expect summary    12 1 0
+    Expect most trained     biceps 12
 
 Powerlifting Workout Routine (Phrak's Greyskull LP Variant)
     Exercise    overhead press: 3 sets 5 reps
@@ -24,15 +25,20 @@ Mark Ripptoe SS Exercise Routine
     Exercise    squats: 3 sets 5 reps
     Exercise    bench press: 3 sets 5 reps
     Exercise    deadlifts: 1 sets 5 reps
+    Expect summary  8 5 0
+    Expect most trained     glutes 12
     Full rest
     Exercise    squats: 3 sets 5 reps
     Exercise    overhead press: 3 sets 5 reps
     Exercise    deadlifts: 1 sets 5 reps
+    Expect summary  8 5 0
+    Expect most trained     glutes 12
     Full rest
-    # skipping to phase 3
     Exercise    squats: 3 sets 5 reps
     Exercise    bench press: 3 sets 5 reps
     Exercise    chin ups: 3 sets 10 reps
+    Expect summary  5 8 0
+    Expect most trained     biceps 15
     Full rest
 
 My Routine Before Pandemic
@@ -43,7 +49,10 @@ My Routine Before Pandemic
     Exercise    dips: 2 sets 10 reps
     Exercise    hanging leg raises: 2 sets 10 reps
     Exercise    farmers carries: 2 sets 5 reps
+    Expect least trained     calves 3
+    Expect summary  3 8 2
     Full Rest
+    Expect no overtrained
     Exercise    deadlifts: 1 sets 5 reps
     Exercise    rack pulls: 1 sets 10 reps
     Exercise    bench press: 3 sets 5 reps
@@ -51,6 +60,9 @@ My Routine Before Pandemic
     Exercise    curls: 2 sets 10 reps
     Exercise    situps: 2 sets 10 reps
     Exercise    calf raises: 2 sets 10 reps
+    Expect least trained     hamstrings 1
+    Expect summary  7 4 0
+    Expect no overtrained
     Full Rest
 
 Lawrence Ballenger Bodybuilding Workout Split

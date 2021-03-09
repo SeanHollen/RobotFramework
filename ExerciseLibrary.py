@@ -43,25 +43,28 @@ class ExerciseLibrary(object):
             raise AssertionError('%s != %s' % (actual, summary))
 
     def expect_least_trained(self, result):
-        actual = len(self._exercises.least_trained_muscle())
+        actual = self._exercises.least_trained_muscle()
         if actual != result:
             raise AssertionError('%s != %s' % (actual, result))
 
     def expect_most_trained(self, result):
-        actual = len(self._exercises.most_trained_muscle())
+        actual = self._exercises.most_trained_muscle()
         if actual != result:
             raise AssertionError('%s != %s' % (actual, result))
 
+    #do
     def expect_no_undertrained(self): 
-        actual = len(self._exercises.get_overtrained())
+        actual = len(self._exercises.get_undertrained())
         if actual != 0:
-            raise AssertionError("There were " + actual + " undertrained")
+            raise AssertionError("There were " + str(actual) + " undertrained")
 
+    #do
     def expect_no_overtrained(self): 
         actual = len(self._exercises.get_overtrained())
         if actual != 0:
-            raise AssertionError("There were " + actual + " undertrained")
+            raise AssertionError("There were " + str(actual) + " overtrained")
 
+    #do
     def should_cause_error(self, exercise):
         try:
             self.exercise(exercise)
